@@ -51,6 +51,9 @@ EMAIL_PORT = 1025
 DEFAULT_FROM_EMAIL = config('DEFAULT_FROM_EMAIL')
 
 
+MEDIA_URL = 'media/'
+MEDIA_ROOT = BASE_DIR / 'media'
+
 
 LOGIN_REDIRECT_URL = 'account:dashboard'
 LOGIN_URL = 'account:login'

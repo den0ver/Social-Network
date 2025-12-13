@@ -11,8 +11,8 @@ urlpatterns = [
     #path('login/', views.user_login, name='login'),
 
     #URL-адреса для входа и выхода
-    path('login/', auth_views.LoginView.as_view(), name='login'),
-    path('logout/', auth_views.LogoutView.as_view(), name='logout'),
+    path('login/', views.user_login, name='login'),
+    path('logout/', views.user_logout, name='logout'),
 
     #URL-адреса для смены пароля
     path('password-change/', auth_views.PasswordChangeView.as_view(success_url=reverse_lazy('account:password_change_done')), name="password_change"),

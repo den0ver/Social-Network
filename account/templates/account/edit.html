@@ -9,7 +9,15 @@
   <form method="post" enctype="multipart/form-data">
     {{ user_form.as_p }}
     {{ profile_form.as_p }}
+    {% if request.user.profile.photo %}
+        Current photo:
+        <a href="{{ request.user.profile.photo.url }}" target="_blank">
+            {{ request.user.profile.photo.name|cut:"users/" }}
+        </a>
+    {% endif %}
     {% csrf_token %}
+    <br>
+    <br>
     <p><input type="submit" value="Save changes"></p>
   </form>
 {% endblock %}
